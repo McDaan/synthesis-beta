@@ -1,7 +1,7 @@
 DEP := $(shell command -v dep 2> /dev/null)
 
-ldflags = -X github.com/cosmos/sdk-application-tutorial/version.Version=$(VERSION) \
-	-X github.com/cosmos/sdk-application-tutorial/version.Commit=$(COMMIT)
+ldflags = -X github.com/McDaan/synthesis-beta/version.Version=$(VERSION) \
+	-X github.com/McDaan/synthesis-beta/version.Commit=$(COMMIT)
 
 get_tools:
 ifndef DEP

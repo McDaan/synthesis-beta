@@ -20,8 +20,8 @@ import (
 	bankcmd "github.com/cosmos/cosmos-sdk/x/bank/client/cli"
 	bank "github.com/cosmos/cosmos-sdk/x/bank/client/rest"
 	app "github.com/McDaan/Synthesis"
-	nsclient "github.com/McDaan/Synthesis/x/nameservice/client"
-	nsrest "github.com/McDaan/Synthesis/x/nameservice/client/rest"
+	nsclient "github.com/McDaan/synthesis-beta/x/nameservice/client"
+	nsrest "github.com/McDaan/synthesis-beta/x/nameservice/client/rest"
 )
 
 const (
@@ -29,7 +29,7 @@ const (
 	storeNS  = "nameservice"
 )
 
-var defaultCLIHome = os.ExpandEnv("$HOME/.nscli")
+var defaultCLIHome = os.ExpandEnv("$HOME/.syncli")
 
 func main() {
 	cobra.EnableCommandSorting = false
@@ -48,8 +48,8 @@ func main() {
 	}
 
 	rootCmd := &cobra.Command{
-		Use:   "nscli",
-		Short: "nameservice Client",
+		Use:   "syncli",
+		Short: "Synthesis Client",
 	}
 
 	// Add --chain-id to persistent flags and mark it required

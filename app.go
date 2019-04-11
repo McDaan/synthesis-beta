@@ -10,7 +10,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/bank"
 	"github.com/cosmos/cosmos-sdk/x/params"
 	"github.com/cosmos/cosmos-sdk/x/staking"
-	"github.com/McDaan/Synthesis/x/nameservice"
+	"github.com/McDaan/synthesis-beta/x/nameservice"
 
 	bam "github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	appName = "nameservice"
+	appName = "synthesis-beta"
 )
 
 type nameServiceApp struct {

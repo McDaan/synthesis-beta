@@ -9,7 +9,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/rest"
-	"github.com/McDaan/Synthesis/x/nameservice"
+	"github.com/McDaan/synthesis-beta/x/nameservice"
 
 	"github.com/gorilla/mux"
 )

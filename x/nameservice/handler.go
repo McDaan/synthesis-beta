@@ -12,12 +12,15 @@ func NewHandler(keeper Keeper) sdk.Handler {
 		switch msg := msg.(type) {
 		case MsgSetName:
 			return handleMsgSetName(ctx, keeper, msg)
+		case MsgBuyName:
+			return handleMsgBuyName(ctx, keeper, msg)
 		default:
 			errMsg := fmt.Sprintf("Unrecognized nameservice Msg type: %v", msg.Type())
 			return sdk.ErrUnknownRequest(errMsg).Result()
 		}
 	}
 }
+
 
 // Handle a message to set name
 func handleMsgSetName(ctx sdk.Context, keeper Keeper, msg MsgSetName) sdk.Result {
@@ -26,21 +29,6 @@ func handleMsgSetName(ctx sdk.Context, keeper Keeper, msg MsgSetName) sdk.Result
 	}
 	keeper.SetName(ctx, msg.Name, msg.Value) // If so, set the name to the value specified in the msg.
 	return sdk.Result{}                      // return
-}
-
-// NewHandler returns a handler for "nameservice" type messages.
-func NewHandler(keeper Keeper) sdk.Handler {
-	return func(ctx sdk.Context, msg sdk.Msg) sdk.Result {
-		switch msg := msg.(type) {
-		case MsgSetName:
-			return handleMsgSetName(ctx, keeper, msg)
-		case MsgBuyName:
-			return handleMsgBuyName(ctx, keeper, msg)
-		default:
-			errMsg := fmt.Sprintf("Unrecognized nameservice Msg type: %v", msg.Type())
-			return sdk.ErrUnknownRequest(errMsg).Result()
-		}
-	}
 }
 
 // Handle a message to buy name
